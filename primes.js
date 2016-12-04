@@ -1,3 +1,3 @@
 var Primes = (function($) {
-    return true
-});
+    console.log("Creating primes...");
+})(jQuery);
