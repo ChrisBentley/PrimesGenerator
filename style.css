@@ -1,0 +1,13 @@
+#enter-numbers {
+	display: none;
+	color: red;
+}
+
+#table-wrapper {
+	display: none;
+	background-color: red;
+	height: 400px;
+	width: 400px;
+	overflow: scroll;
+	margin-top: 20px;
+}
