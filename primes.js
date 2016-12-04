@@ -4,6 +4,17 @@ var Primes = (function($) {
     function generatePrimes(numberOfPrimesToGenerate) {
         console.log("Generating " + numberOfPrimesToGenerate + " Primes");
 
+        var generatedPrimes = [];
+
+        drawTable(generatedPrimes);
+    }
+
+    function drawTable(generatedPrimes) {
+        console.log("Drawing table for prime numbers.");
+
+        var $tableWrapper = $('#table-wrapper');
+
+        $tableWrapper.show();
     }
 
     function setupPrimeGeneration() {
