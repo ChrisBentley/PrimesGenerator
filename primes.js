@@ -4,7 +4,22 @@ var Primes = (function($) {
     function generatePrimes(numberOfPrimesToGenerate) {
         console.log("Generating " + numberOfPrimesToGenerate + " Primes");
 
+        var intPrimesToGenerate = parseInt(numberOfPrimesToGenerate);
+
         var generatedPrimes = [];
+        for (var i = 0; generatedPrimes.length < (intPrimesToGenerate + 2); i++) {
+            var notPrime = false;
+            for (var j = 2; j <= generatedPrimes.length && !notPrime; j++) {
+                if (i%generatedPrimes[j] === 0) {
+                    notPrime = true;
+                }
+            }
+            if (notPrime === false) generatedPrimes.push(i);
+        }
+
+        generatedPrimes.splice(0, 2);
+
+        console.log(generatedPrimes);
 
         drawTable(generatedPrimes);
     }
