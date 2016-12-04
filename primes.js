@@ -79,7 +79,7 @@ var Primes = (function($) {
             setupPrimeGeneration();
         },
         generatePrimes : function(x) {
-            generatePrimes(x);
+            return generatePrimes(x);
         },
         drawTable : function(x) {
             drawTable(x);
