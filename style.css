@@ -5,9 +5,12 @@
 
 #table-wrapper {
 	display: none;
-	background-color: red;
-	height: 400px;
-	width: 400px;
+	height: 100%;
+	width: 100%;
 	overflow: scroll;
 	margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
 }

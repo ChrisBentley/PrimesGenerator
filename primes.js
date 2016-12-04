@@ -28,6 +28,29 @@ var Primes = (function($) {
         console.log("Drawing table for prime numbers.");
 
         var $tableWrapper = $('#table-wrapper');
+        var $primesTable = $('#primes-table');
+
+        if ($primesTable.children().length > 0) {
+            $primesTable.empty();
+        }
+
+        for (var i = 0; i < (generatedPrimes.length + 1); i++) {
+            $primesTable.append('<tr>');
+
+            if (i == 0) {
+                $primesTable.append('<td>' + '</td>');
+                for (var j = 0; j < generatedPrimes.length; j++) {
+                    $primesTable.append('<td>' + generatedPrimes[j] + '</td>');
+                }
+            } else {
+                $primesTable.append('<td>' + generatedPrimes[i - 1] + '</td>');
+                for (var j = 0; j < generatedPrimes.length; j++) {
+                    $primesTable.append('<td>' + (generatedPrimes[j] * generatedPrimes[i - 1])  + '</td>');
+                }
+            }
+
+            $primesTable.append('</tr>');
+        }
 
         $tableWrapper.show();
     }
