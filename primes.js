@@ -1,9 +1,22 @@
 var Primes = (function($) {
     "use strict";
 
+    function generatePrimes(numberOfPrimesToGenerate) {
+        console.log("Generating " + numberOfPrimesToGenerate + " Primes");
+
+    }
+
     function setupPrimeGeneration() {
-        console.log("setting up Primes generation.");
-        return true;
+        console.log("Setting up Primes generation...");
+
+        $('#generate-primes').on('click', function(e) {
+            e.preventDefault();
+
+            var $primesToGenerate = $('#primes-to-generate');
+
+            generatePrimes($primesToGenerate.val());
+        });
+
     }
 
     return {
