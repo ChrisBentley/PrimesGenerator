@@ -21,7 +21,7 @@ var Primes = (function($) {
 
         console.log(generatedPrimes);
 
-        drawTable(generatedPrimes);
+        return generatedPrimes;
     }
 
     function drawTable(generatedPrimes) {
@@ -48,8 +48,6 @@ var Primes = (function($) {
                     $primesTable.append('<td>' + (generatedPrimes[j] * generatedPrimes[i - 1])  + '</td>');
                 }
             }
-
-            $primesTable.append('</tr>');
         }
 
         $tableWrapper.show();
@@ -64,13 +62,13 @@ var Primes = (function($) {
             e.preventDefault();
 
             var $primesToGenerate = $('#primes-to-generate'),
-                primesToGenerate = $primesToGenerate.val();
+                numberOfPrimesToGenerate = $primesToGenerate.val();
 
-            if (!primesToGenerate || primesToGenerate < 1) {
+            if (!numberOfPrimesToGenerate || numberOfPrimesToGenerate < 1) {
                 $enterNumberMsg.show();
             } else {
                 $enterNumberMsg.hide();
-                generatePrimes(primesToGenerate);
+                drawTable(generatePrimes(numberOfPrimesToGenerate));
             }
         });
 
@@ -79,6 +77,12 @@ var Primes = (function($) {
     return {
         setup: function() {
             setupPrimeGeneration();
+        },
+        generatePrimes : function(x) {
+            generatePrimes(x);
+        },
+        drawTable : function(x) {
+            drawTable(x);
         }
     };
 
